@@ -648,6 +648,130 @@
     .chat-toggle { right: 16px; bottom: 16px; }
   }
 
+  /* ── REVIEWS ── */
+  .reviews { background: var(--warm-white); }
+
+  .reviews-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-bottom: 48px; }
+
+  .google-rating-card {
+    background: #fff; border: 1px solid rgba(74,124,89,0.15); border-radius: 8px;
+    padding: 20px 28px; display: flex; align-items: center; gap: 18px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+  }
+  .google-rating-card .gr-g {
+    font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700;
+    width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+    background: conic-gradient(#4285F4 0 25%, #34A853 25% 50%, #FBBC05 50% 75%, #EA4335 75% 100%);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+  }
+  .google-rating-card .gr-text strong { display: block; font-size: 0.95rem; color: var(--charcoal); }
+  .google-rating-card .gr-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; }
+  .google-rating-card .gr-text a { font-size: 0.78rem; color: var(--sage); }
+
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 64px;
+  }
+
+  .review-card {
+    background: #fff; border: 1px solid rgba(74,124,89,0.12); border-radius: 8px;
+    padding: 28px; display: flex; flex-direction: column; gap: 14px;
+    transition: all 0.3s; position: relative;
+  }
+  .review-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,0.08); }
+  .review-card .rc-stars { color: var(--gold); font-size: 1.05rem; letter-spacing: 3px; }
+  .review-card .rc-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.7; font-style: italic; flex: 1; }
+  .review-card .rc-author { display: flex; align-items: center; gap: 12px; }
+  .review-card .rc-avatar {
+    width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(74,124,89,0.15); color: var(--sage-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 0.95rem;
+  }
+  .review-card .rc-name { font-size: 0.88rem; font-weight: 600; color: var(--charcoal); }
+  .review-card .rc-meta { font-size: 0.72rem; color: var(--text-light); }
+
+  .review-form-wrap {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start;
+    background: var(--cream); border: 1px solid rgba(74,124,89,0.15);
+    border-radius: 10px; padding: 48px;
+  }
+  .review-form-intro h3 {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 400;
+    color: var(--sage-dark); margin-bottom: 14px;
+  }
+  .review-form-intro p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 18px; }
+  .review-form-steps { display: flex; flex-direction: column; gap: 10px; }
+  .review-form-steps .rf-step { display: flex; gap: 12px; align-items: baseline; font-size: 0.84rem; color: var(--text-mid); }
+  .review-form-steps .rf-step b { color: var(--sage); font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; }
+
+  .review-form { display: flex; flex-direction: column; gap: 16px; }
+  .review-form label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); }
+  .review-form input[type="text"], .review-form textarea {
+    width: 100%; padding: 13px 16px; border: 1px solid rgba(74,124,89,0.25);
+    border-radius: 5px; font-family: 'Jost', sans-serif; font-size: 0.9rem;
+    background: #fff; color: var(--charcoal); outline: none; transition: border 0.2s;
+  }
+  .review-form input:focus, .review-form textarea:focus { border-color: var(--sage); }
+  .review-form textarea { min-height: 110px; resize: vertical; }
+
+  .star-picker { display: flex; gap: 6px; }
+  .star-picker button {
+    background: none; border: none; cursor: pointer; font-size: 1.7rem;
+    color: #d8d3c8; transition: color 0.15s, transform 0.15s; padding: 0; line-height: 1;
+  }
+  .star-picker button.active { color: var(--gold); }
+  .star-picker button:hover { transform: scale(1.15); }
+
+  .review-submit-btn {
+    background: var(--sage); color: #fff; border: none; cursor: pointer;
+    padding: 15px 28px; border-radius: 4px; font-family: 'Jost', sans-serif;
+    font-size: 0.84rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    transition: background 0.3s; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .review-submit-btn:hover { background: var(--sage-dark); }
+  .review-form-note { font-size: 0.74rem; color: var(--text-light); line-height: 1.6; }
+  .review-thanks {
+    display: none; background: rgba(74,124,89,0.1); border: 1px solid rgba(74,124,89,0.3);
+    border-radius: 6px; padding: 16px 20px; font-size: 0.86rem; color: var(--sage-dark); line-height: 1.6;
+  }
+  .review-thanks.show { display: block; }
+  .review-thanks a { color: var(--sage-dark); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+    .review-form-wrap { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
+  }
+
+  /* ── CHAT INPUT & TYPING ── */
+  .chat-input-row { display: flex; gap: 8px; margin-bottom: 8px; }
+  .chat-input {
+    flex: 1; padding: 10px 14px; border: 1px solid rgba(74,124,89,0.3);
+    border-radius: 20px; font-family: 'Jost', sans-serif; font-size: 0.84rem;
+    outline: none; transition: border 0.2s; color: var(--charcoal);
+  }
+  .chat-input:focus { border-color: var(--sage); }
+  .chat-send-btn {
+    width: 40px; height: 40px; border-radius: 50%; border: none; cursor: pointer;
+    background: var(--sage); color: #fff; font-size: 16px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+  }
+  .chat-send-btn:hover { background: var(--sage-dark); }
+
+  .chat-typing {
+    display: flex; gap: 4px; padding: 12px 16px; background: #fff;
+    border: 1px solid rgba(74,124,89,0.12); border-radius: 12px;
+    border-bottom-left-radius: 3px; align-self: flex-start; width: fit-content;
+  }
+  .chat-typing span {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--sage-light);
+    animation: typingBounce 1.2s infinite;
+  }
+  .chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+  .chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes typingBounce { 0%, 60%, 100% { transform: translateY(0); opacity: 0.5; } 30% { transform: translateY(-5px); opacity: 1; } }
+
+  .chat-options.horizontal { flex-direction: row; flex-wrap: wrap; }
+
   /* ── EMOJI ICONS: light sage-green tint to match the theme ── */
   .emoji {
     display: inline-block;
@@ -671,6 +795,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why Homoeopathy</a></li>
+    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a class="nav-cta" href="tel:+919495909630">Book Appointment</a>
@@ -896,6 +1021,100 @@
   </div>
 </section>
 
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-header">
+    <div>
+      <p class="section-label">Patient Reviews</p>
+      <h2 class="section-title">What our patients <strong>say about us</strong></h2>
+    </div>
+    <div class="google-rating-card">
+      <div class="gr-g">G</div>
+      <div class="gr-text">
+        <strong>Find us on Google</strong>
+        <div class="gr-stars">★★★★★</div>
+        <a href="https://maps.google.com/?cid=16779897322582308007" target="_blank" rel="noopener">View our Google listing →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⚠️ SAMPLE REVIEWS: replace the three cards below with real reviews copied from your Google page -->
+  <div class="reviews-grid" id="reviewsGrid">
+    <div class="review-card">
+      <div class="rc-stars">★★★★★</div>
+      <p class="rc-text">"Dr. Ambily listened patiently to every detail before prescribing. My daughter's recurring allergy has improved so much in three months. Very caring doctor."</p>
+      <div class="rc-author">
+        <div class="rc-avatar">P</div>
+        <div>
+          <div class="rc-name">Priya</div>
+          <div class="rc-meta">Patient since 2022</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="rc-stars">★★★★★</div>
+      <p class="rc-text">"Our whole family has been consulting here for years. Gentle medicines, no side effects, and the doctor genuinely cares about each patient's progress."</p>
+      <div class="rc-author">
+        <div class="rc-avatar">R</div>
+        <div>
+          <div class="rc-name">Rajesh</div>
+          <div class="rc-meta">Patient since 2015</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="rc-stars">★★★★★</div>
+      <p class="rc-text">"I came for skin problems after trying many treatments. The improvement has been steady and lasting. Highly recommend this clinic to everyone in Alakode."</p>
+      <div class="rc-author">
+        <div class="rc-avatar">S</div>
+        <div>
+          <div class="rc-name">Sindhu</div>
+          <div class="rc-meta">Patient since 2023</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="review-form-wrap">
+    <div class="review-form-intro">
+      <h3>Share your experience</h3>
+      <p>Your feedback helps other families find trusted homoeopathic care. Writing a review takes less than a minute.</p>
+      <div class="review-form-steps">
+        <div class="rf-step"><b>1.</b><span>Rate us and write your review below</span></div>
+        <div class="rf-step"><b>2.</b><span>Your review text is copied automatically</span></div>
+        <div class="rf-step"><b>3.</b><span>Google opens — just paste and post!</span></div>
+      </div>
+    </div>
+
+    <form class="review-form" id="reviewForm">
+      <div>
+        <label for="revName">Your Name</label>
+        <input type="text" id="revName" placeholder="e.g. Anjali K." maxlength="50" required>
+      </div>
+      <div>
+        <label>Your Rating</label>
+        <div class="star-picker" id="starPicker" aria-label="Choose a star rating">
+          <button type="button" data-star="1" aria-label="1 star">★</button>
+          <button type="button" data-star="2" aria-label="2 stars">★</button>
+          <button type="button" data-star="3" aria-label="3 stars">★</button>
+          <button type="button" data-star="4" aria-label="4 stars">★</button>
+          <button type="button" data-star="5" aria-label="5 stars">★</button>
+        </div>
+      </div>
+      <div>
+        <label for="revText">Your Review</label>
+        <textarea id="revText" placeholder="Tell us about your experience at the clinic..." maxlength="1000" required></textarea>
+      </div>
+      <button type="submit" class="review-submit-btn"><span class="emoji">⭐</span> Submit & Post on Google</button>
+      <div class="review-thanks" id="reviewThanks">
+        <strong>Thank you!</strong> Your review text has been copied. A Google window has opened — paste your review there and tap <em>Post</em> to publish it.
+        <br>If it didn't open, <a href="https://search.google.com/local/writereview?placeid=ChIJAWzHLfFEpDsRp_QLELYr3ug" target="_blank" rel="noopener">click here to review us on Google</a>.
+      </div>
+      <p class="review-form-note">Reviews are posted publicly on our Google Business page. Your review will also appear on this page.</p>
+    </form>
+  </div>
+</section>
+
 <!-- OPENING HOURS STRIP -->
 <div class="hours-strip">
   <p class="hours-title"><span class="emoji">🕐</span> Opening Hours</p>
@@ -992,6 +1211,7 @@
         <li><a href="#about">About Doctor</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#why">Why Homoeopathy</a></li>
+        <li><a href="#reviews">Patient Reviews</a></li>
         <li><a href="#contact">Book Appointment</a></li>
       </ul>
     </div>
@@ -1028,44 +1248,172 @@
   </div>
   <div class="chat-body" id="chatBody"></div>
   <div class="chat-footer">
+    <div class="chat-input-row">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." maxlength="200" aria-label="Type your question">
+      <button class="chat-send-btn" id="chatSend" aria-label="Send message">➤</button>
+    </div>
     <p class="chat-footer-note">For medical advice, please call +91 94959 09630</p>
   </div>
 </div>
 
 <script>
+/* ── REVIEWS: star picker, submit → copy text → open Google review page ── */
+(function () {
+  var GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=ChIJAWzHLfFEpDsRp_QLELYr3ug';
+  var form = document.getElementById('reviewForm');
+  if (!form) return;
+  var picker = document.getElementById('starPicker');
+  var stars = picker.querySelectorAll('button');
+  var rating = 5;
+
+  function paintStars() {
+    stars.forEach(function (s) {
+      s.classList.toggle('active', parseInt(s.dataset.star, 10) <= rating);
+    });
+  }
+  stars.forEach(function (s) {
+    s.addEventListener('click', function () { rating = parseInt(s.dataset.star, 10); paintStars(); });
+  });
+  paintStars();
+
+  function starString(n) { return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n); }
+
+  function addReviewCard(name, nStars, text) {
+    var grid = document.getElementById('reviewsGrid');
+    var card = document.createElement('div');
+    card.className = 'review-card';
+    var initial = (name.trim().charAt(0) || 'A').toUpperCase();
+    card.innerHTML =
+      '<div class="rc-stars">' + starString(nStars) + '</div>' +
+      '<p class="rc-text"></p>' +
+      '<div class="rc-author"><div class="rc-avatar">' + initial + '</div>' +
+      '<div><div class="rc-name"></div><div class="rc-meta">Just now · via this website</div></div></div>';
+    card.querySelector('.rc-text').textContent = '"' + text + '"';
+    card.querySelector('.rc-name').textContent = name;
+    grid.insertBefore(card, grid.firstChild);
+  }
+
+  function loadSavedReviews() {
+    try {
+      var saved = JSON.parse(localStorage.getItem('ahmc_reviews') || '[]');
+      saved.forEach(function (r) { addReviewCard(r.name, r.stars, r.text); });
+    } catch (e) { /* ignore */ }
+  }
+  loadSavedReviews();
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('revName').value.trim();
+    var text = document.getElementById('revText').value.trim();
+    if (!name || !text) return;
+
+    addReviewCard(name, rating, text);
+    try {
+      var saved = JSON.parse(localStorage.getItem('ahmc_reviews') || '[]');
+      saved.unshift({ name: name, stars: rating, text: text, date: new Date().toISOString() });
+      localStorage.setItem('ahmc_reviews', JSON.stringify(saved.slice(0, 20)));
+    } catch (e) { /* ignore */ }
+
+    // Copy review text so the user can paste it straight into Google
+    function openGoogle() { window.open(GOOGLE_REVIEW_URL, '_blank', 'noopener'); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(openGoogle, openGoogle);
+    } else {
+      openGoogle();
+    }
+
+    document.getElementById('reviewThanks').classList.add('show');
+    form.querySelector('.review-submit-btn').textContent = '✓ Submitted — finish on Google';
+    document.getElementById('revName').value = '';
+    document.getElementById('revText').value = '';
+  });
+})();
+
+/* ── CHATBOT: quick-reply buttons + free-text questions with keyword matching ── */
 (function () {
   var toggle = document.getElementById('chatToggle');
   var win = document.getElementById('chatWindow');
   var body = document.getElementById('chatBody');
   var ping = document.getElementById('chatPing');
+  var input = document.getElementById('chatInput');
+  var sendBtn = document.getElementById('chatSend');
   var started = false;
 
   var faqs = [
     {
-      label: "What are your clinic hours?",
+      label: "Clinic hours",
+      keywords: ["hours", "timing", "time", "open", "close", "closed", "sunday", "when", "working"],
       reply: "We're open <strong>Monday–Saturday, 9:00 AM – 7:00 PM</strong>. We're closed on Sundays, but you can call anytime for emergencies."
     },
     {
-      label: "How do I book an appointment?",
+      label: "Book an appointment",
+      keywords: ["book", "appointment", "booking", "consult", "consultation", "visit", "schedule", "token", "slot"],
       reply: "You can book by calling or WhatsApping us at <a href='tel:+919495909630'>+91 94959 09630</a> or <a href='tel:+919446356208'>+91 94463 56208</a>. Walk-ins are welcome too!"
     },
     {
-      label: "What conditions do you treat?",
-      reply: "We treat a wide range of conditions including Psychological & Mental Health, Women's Health, Child Health, Lifestyle Diseases (diabetes, thyroid, etc.), Allergy & Asthma, Skin & Hair issues, Rheumatic Conditions, and Gastrointestinal disorders."
+      label: "Conditions we treat",
+      keywords: ["treat", "condition", "disease", "problem", "cure", "psoriasis", "eczema", "acne", "vitiligo", "hair", "skin", "asthma", "allergy", "sinus", "cough", "diabetes", "thyroid", "pressure", "obesity", "arthritis", "joint", "pain", "back", "ibs", "gastric", "acidity", "constipation", "pcod", "pcos", "menstrual", "fertility", "infertility", "anxiety", "depression", "stress", "migraine", "headache"],
+      reply: "We treat a wide range of conditions:<br><span class='emoji'>🧘</span> Mental health (anxiety, depression, stress)<br><span class='emoji'>🌸</span> Women's health (PCOD, hormonal, fertility)<br><span class='emoji'>👶</span> Child health<br><span class='emoji'>🩺</span> Lifestyle diseases (diabetes, thyroid, BP)<br><span class='emoji'>🌬️</span> Allergy & asthma<br><span class='emoji'>✨</span> Skin & hair<br><span class='emoji'>🦴</span> Joint & rheumatic pain<br><span class='emoji'>🔬</span> Digestive disorders<br>Call us to discuss your specific condition!"
     },
     {
-      label: "Tell me about Dr. Ambily",
+      label: "About Dr. Ambily",
+      keywords: ["doctor", "ambily", "qualification", "experience", "dhms", "psychology", "who"],
       reply: "Dr. Ambily Sreelal has been practising homoeopathy since <strong>1997</strong> (28+ years). She holds a <strong>DHMS</strong> degree and a <strong>Diploma in Clinical Psychology</strong>, giving her unique expertise in both physical and mental health treatment."
     },
     {
       label: "Is homoeopathy safe?",
-      reply: "Yes — homoeopathic remedies are highly diluted, natural, and safe for all ages, from newborns to the elderly, with no harmful side effects."
+      keywords: ["safe", "safety", "side effect", "sideeffect", "harmful", "natural", "steroid"],
+      reply: "Yes — homoeopathic remedies are highly diluted, natural, and safe for all ages, from newborns to the elderly, with no harmful side effects. They are safe for <strong>children, pregnant women, and the elderly</strong>."
+    },
+    {
+      label: "Where are you located?",
+      keywords: ["location", "where", "address", "place", "direction", "reach", "map", "alakode", "kannur"],
+      reply: "We're located at <strong>Alakode, near NSS Karayogam, Kannur, Kerala 670571</strong>.<br><a href='https://maps.google.com/?cid=16779897322582308007' target='_blank'><span class='emoji'>📍</span> Open in Google Maps</a>"
+    },
+    {
+      label: "Consultation fees",
+      keywords: ["fee", "fees", "cost", "price", "charge", "payment", "much", "rupees"],
+      reply: "Consultation fees are kept affordable and vary by treatment type. Please call us at <a href='tel:+919495909630'>+91 94959 09630</a> for current fee details."
+    },
+    {
+      label: "First visit — what to expect",
+      keywords: ["first", "expect", "new patient", "bring", "reports", "records", "procedure"],
+      reply: "On your first visit, Dr. Ambily takes a detailed case history — your symptoms, medical history, lifestyle, and emotional wellbeing — to select a remedy suited to <em>you</em>. Please bring any previous <strong>medical reports or prescriptions</strong> you have. First consultations take a little longer, so plan for extra time."
+    },
+    {
+      label: "How long does treatment take?",
+      keywords: ["how long", "long", "duration", "months", "slow", "fast", "result", "improve", "work", "treatment take", "take time"],
+      reply: "It varies with the condition. Acute illnesses (fever, cough, etc.) often respond within days. Chronic conditions that developed over years need a few months of constitutional treatment for deep, lasting healing. Dr. Ambily will give you a realistic idea after your first consultation."
+    },
+    {
+      label: "Can I continue my current medicines?",
+      keywords: ["allopathy", "allopathic", "english medicine", "other medicine", "continue", "along", "together", "combine", "stop"],
+      reply: "In most cases, yes — homoeopathy can be taken alongside your existing medicines. <strong>Never stop prescribed medications on your own.</strong> Bring your current prescriptions to your consultation and Dr. Ambily will guide you safely."
+    },
+    {
+      label: "Emergency help",
+      keywords: ["emergency", "urgent", "immediately", "now", "help"],
+      reply: "For emergencies you can <strong>call us anytime</strong>: <a href='tel:+919495909630'>+91 94959 09630</a>. For serious medical emergencies, please also contact your nearest hospital right away."
     },
     {
       label: "Contact details",
+      keywords: ["contact", "phone", "number", "call", "whatsapp", "email"],
       reply: "<span class='emoji'>📞</span> Primary: <a href='tel:+919495909630'>+91 94959 09630</a><br><span class='emoji'>📱</span> Alternate: <a href='tel:+919446356208'>+91 94463 56208</a><br><span class='emoji'>💬</span> <a href='https://wa.me/919495909630' target='_blank'>WhatsApp us</a>"
+    },
+    {
+      label: "Leave a review",
+      keywords: ["review", "rating", "feedback", "rate", "google", "testimonial", "experience"],
+      reply: "We'd love your feedback! <span class='emoji'>⭐</span> You can <a href='#reviews'>write a review here on our site</a> — it takes under a minute and helps other families find us. It will also guide you to post it on our <a href='https://search.google.com/local/writereview?placeid=ChIJAWzHLfFEpDsRp_QLELYr3ug' target='_blank'>Google page</a>."
     }
   ];
+
+  var smallTalk = [
+    { keywords: ["hi", "hello", "hai", "hey", "good morning", "good evening", "namaste", "vanakkam"], reply: "Hello! <span class='emoji'>👋</span> Welcome to Aravind Homeo Medical Centre. How can I help you today?" },
+    { keywords: ["thank", "thanks", "thankyou", "nandi"], reply: "You're most welcome! <span class='emoji'>🌿</span> Is there anything else I can help you with?" },
+    { keywords: ["bye", "goodbye", "see you"], reply: "Take care, and stay healthy! <span class='emoji'>🌱</span> Feel free to chat again anytime." }
+  ];
+
+  var FALLBACK = "I'm not sure about that one, but our team can definitely help! <span class='emoji'>📞</span> Call <a href='tel:+919495909630'>+91 94959 09630</a> or <a href='https://wa.me/919495909630' target='_blank'>WhatsApp us</a>. You can also tap one of the topics below <span class='emoji'>👇</span>";
 
   function addMessage(text, sender) {
     var msg = document.createElement('div');
@@ -1075,9 +1423,33 @@
     body.scrollTop = body.scrollHeight;
   }
 
+  function showTyping() {
+    var t = document.createElement('div');
+    t.className = 'chat-typing';
+    t.innerHTML = '<span></span><span></span><span></span>';
+    body.appendChild(t);
+    body.scrollTop = body.scrollHeight;
+    return t;
+  }
+
+  function botReply(html, thenOptions) {
+    var t = showTyping();
+    setTimeout(function () {
+      t.remove();
+      addMessage(html, 'bot');
+      if (thenOptions !== false) setTimeout(showOptions, 400);
+    }, 600 + Math.random() * 500);
+  }
+
+  function clearOptions() {
+    var old = body.querySelector('.chat-options');
+    if (old) old.remove();
+  }
+
   function showOptions() {
+    clearOptions();
     var wrap = document.createElement('div');
-    wrap.className = 'chat-options';
+    wrap.className = 'chat-options horizontal';
     faqs.forEach(function (faq) {
       var btn = document.createElement('button');
       btn.className = 'chat-option-btn';
@@ -1085,11 +1457,8 @@
       btn.textContent = faq.label;
       btn.addEventListener('click', function () {
         addMessage(faq.label, 'user');
-        wrap.remove();
-        setTimeout(function () {
-          addMessage(faq.reply, 'bot');
-          setTimeout(showOptions, 350);
-        }, 300);
+        clearOptions();
+        botReply(faq.reply);
       });
       wrap.appendChild(btn);
     });
@@ -1097,11 +1466,49 @@
     body.scrollTop = body.scrollHeight;
   }
 
+  function matchIntent(text) {
+    var q = ' ' + text.toLowerCase().replace(/[^a-z0-9 ]/g, ' ') + ' ';
+    function hasKw(kw) {
+      // short keywords need whole-word match; longer ones can match as substring
+      return kw.length > 4 ? q.indexOf(kw) !== -1 : q.indexOf(' ' + kw + ' ') !== -1;
+    }
+    // Small talk first (short messages only)
+    if (text.length < 40) {
+      for (var i = 0; i < smallTalk.length; i++) {
+        if (smallTalk[i].keywords.some(hasKw)) return smallTalk[i].reply;
+      }
+    }
+    // Score FAQs by keyword hits; longer keywords weigh more
+    var best = null, bestScore = 0;
+    faqs.forEach(function (faq) {
+      var score = 0;
+      faq.keywords.forEach(function (kw) {
+        if (hasKw(kw)) score += kw.length > 5 ? 2 : 1;
+      });
+      if (score > bestScore) { bestScore = score; best = faq; }
+    });
+    return best ? best.reply : null;
+  }
+
+  function handleUserText() {
+    var text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    addMessage(text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'), 'user');
+    clearOptions();
+    var reply = matchIntent(text);
+    botReply(reply || FALLBACK);
+  }
+
+  sendBtn.addEventListener('click', handleUserText);
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); handleUserText(); }
+  });
+
   function startChat() {
     if (started) return;
     started = true;
-    addMessage("Hi there! 👋 Welcome to Aravind Homeo Medical Centre. What would you like to know?", 'bot');
-    setTimeout(showOptions, 350);
+    botReply("Hi there! <span class='emoji'>👋</span> Welcome to Aravind Homeo Medical Centre. Type a question below, or pick a topic:");
   }
 
   toggle.addEventListener('click', function () {
@@ -1110,6 +1517,7 @@
     if (isOpen) {
       ping.style.display = 'none';
       startChat();
+      setTimeout(function () { input.focus(); }, 300);
     }
   });
 })();
